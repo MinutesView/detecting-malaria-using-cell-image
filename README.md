@@ -28,20 +28,26 @@ Max Pooling Layer: Convolutional layers (with activation functions) are sometime
 Fully Connected Layer: The convolutional and down-sampling layers are followed by one or more fully connected layers. As its name suggests, a fully connected layer is a layer in which the neurons connect to all the neurons in the preceding layer. This layer combines all the features learned by the previous layers across the image to identify the larger patterns. The last fully connected layer combines the features to classify the images. Therefore, the OutputSize parameter in the last fully connected layer is equal to the number of classes in the target data. In this example, the output size is 2, corresponding to the 2 classes. We used fullyConnectedLayer to create a fully connected layer.
 Softmax Layer: The softmax activation function normalizes the output of the fully connected layer. The output of the softmax layer consists of positive numbers that sum to one, which can then be used as classification probabilities by the classification layer. Create a softmax layer using the softmaxLayer function after the last fully connected layer.
 Classification Layer: The final layer is the classification layer. This layer uses the probabilities returned by the softmax activation function for each input to assign the input to one of the mutually exclusive classes and compute the loss. To create a classification layer, we used classificationLayer.
+
 ![Layer](https://user-images.githubusercontent.com/48564403/158805824-84f19053-9a64-457e-8189-c52485937db6.png)
+
 Here we can see the total number of layers which is 24 here and how they are connected. 
 
 
 Specify Training Options
 
 After defining the network structure, specify the training options. We trained the network with optimizer adam with an initial learning rate of 0.0002. We used MiniBatchSize of  24 which means the AI will work with batched of 24 files. We set the maximum number of epochs to 10. An epoch is a full training cycle on the entire training data set. We monitored the network accuracy during training by specifying validation data which is imdsValid here and validation frequency which is 10 here. Shuffle the data every epoch. The software trains the network on the training data and calculates the accuracy on the validation data at regular intervals during training. The validation data is not used to update the network weights. We turned on the training progress plot. 
+
 ![Training](https://user-images.githubusercontent.com/48564403/158805717-8fa44b4a-c13b-4c99-aaa9-74621a3fa45f.png)
+
 Training Progress:
 We can see that the training progress took 250 min 4 sec with 86.85% validation accuracy. Training cycle had 1 epoch and 290 out of 6880 iterations were completed. Per epoch there were 688 iterations. Validation frequency was 10 iterations which mean the graph was plotted after 10 iterations with a patience of 6. Here we can also see the learning rate was .0003.
 
 Confusion Matrix: 
 At the end of the training progress, the confusion matrix will be used to show the result of the test done by the AI. A combination of predicted class and actual class result is shown in confusion matrix. In the confusion matrix given below, we can see that the AI predicted correctly 82.3% of actual parasitized pictures, 92.2% of uninfected pictures. This result is shown vertically. On the other hand, if we look at the confusion matrix horizontally we can see that, 91.3% pictures were identified accurately parasitized and 83.9% were identified accurately as uninfected. In the bottom right corner we can see the average accuracy which is 87.2%. This confusion matrix helps us to understand how good the AI is and if we need to improve it even more. AI can be called good if it has accuracy higher than 95%. So, we need to improve the AI a little bit more to get higher accuracy and make it useful for medical purposes. 
+
 ![Confusion](https://user-images.githubusercontent.com/48564403/158805930-17846de6-6cd7-49eb-9417-3b2d37a24b88.png)
+
 Conclusion 
 The main aim of the proposed research work is to develop an image assisted examination procedure to extract and assess malaria affected cells. If more accuracy can be achieved then we will be able to detect the malaria damaged cells in patients and take measures accordingly. Malaria parasite is big problem in today’s world. If we can develop the AI further , we will be able to help the doctor working with this problem.
 
