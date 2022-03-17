@@ -1,9 +1,11 @@
 # detecting-malaria-using-cell-image
 
-Introduction
+Introduction:
+
 Malaria is an infectious disorder caused by Plasmodium group individual Protozoan Parasite. The sickness is spread in particularly via the bite of Anopheles Mosquito, an infected female. With almost 240 million cases reported each year, the disease puts nearly forty percent of the world population at threat. Typical symptoms of malaria comprise fever, nausea, headaches and, in severe instances, yellow skin, seizures, coma that leads to death. Every year trained professionals examine several million blood films to detect malaria infection. Malaria detection involves manually numbering the parasites and infected red blood cells. However, this relies totally upon the microscopist's experience and expertise. It has been proven in several area studies that manual microscopy isn’t always a reliable screening approach when accomplished through non-experts due to lack of training particularly in the rural regions where malaria is endemic.Operating in a limited resource set-up with no supportive program for capacity maintenance can affect the quality of the diagnosis. That leads to erroneous diagnostic decisions. Henceforth we have built up this method to give a precise diagnosis. Convolutional Neural Networks (CNN), a category obtained from deep learning (DL) models is used to obtain superior end results with feature extraction and categorization. CNN based DL models are a characteristic extractors towards classifying the blood cells. CNN is a promising device for feature extraction. Automated malaria screening using DL techniques, consequently, function an effective diagnostic aid. An automated Artificial Intelligence (AI) system targets at performing this task without human intervention and to offer a goal, reliable, and efficient tool to accomplish that.All this makes deep learning models incredibly a precise option for performing computer vision tasks.
 
-Dataset Description
+Dataset Description:
+
 The dataset is organized into a folder (cell_images) and contains subfolders for each image category (Parasitized, Uninfected).  There are 27,5560 images of malaria cell image of  blood  and  2 categories of infected and uninfected images. The  two  levels of cell images are,
 i)	Parasitized, which shows the amount of infected cell image of blood.
 ii)	Uninfected, which shows the amount of uninfected cell image of blood. 
@@ -17,7 +19,8 @@ We divided the imds into three datastores as imdsTrain, imdsTest, imdsValid. We 
 
 
 
-Preprocessing
+Preprocessing:
+
 To help the AI with detecting the malaria parasite we will resize all the images to same size. For this we used a function named image preprocessing in which we resized all the pictures to 115  by 115 size. We used the function to resize all the images. 
 Network Architecture
 Image Input Layer: An imageInputLayer is where you specify the image size, which, in this case, is 115 by 115 by 3. These numbers correspond to the height, width, and the channel size. The digit data consists of grayscale images, so the channel size (color channel) is 3. For a color image, the channel size is 3, corresponding to the RGB values. You do not need to shuffle the data because trainNetwork, by default, shuffles the data at the beginning of training. trainNetwork can also automatically shuffle the data at the beginning of every epoch during training.
@@ -41,13 +44,16 @@ After defining the network structure, specify the training options. We trained t
 ![Training](https://user-images.githubusercontent.com/48564403/158805717-8fa44b4a-c13b-4c99-aaa9-74621a3fa45f.png)
 
 Training Progress:
+
 We can see that the training progress took 250 min 4 sec with 86.85% validation accuracy. Training cycle had 1 epoch and 290 out of 6880 iterations were completed. Per epoch there were 688 iterations. Validation frequency was 10 iterations which mean the graph was plotted after 10 iterations with a patience of 6. Here we can also see the learning rate was .0003.
 
 Confusion Matrix: 
+
 At the end of the training progress, the confusion matrix will be used to show the result of the test done by the AI. A combination of predicted class and actual class result is shown in confusion matrix. In the confusion matrix given below, we can see that the AI predicted correctly 82.3% of actual parasitized pictures, 92.2% of uninfected pictures. This result is shown vertically. On the other hand, if we look at the confusion matrix horizontally we can see that, 91.3% pictures were identified accurately parasitized and 83.9% were identified accurately as uninfected. In the bottom right corner we can see the average accuracy which is 87.2%. This confusion matrix helps us to understand how good the AI is and if we need to improve it even more. AI can be called good if it has accuracy higher than 95%. So, we need to improve the AI a little bit more to get higher accuracy and make it useful for medical purposes. 
 
 ![Confusion](https://user-images.githubusercontent.com/48564403/158805930-17846de6-6cd7-49eb-9417-3b2d37a24b88.png)
 
-Conclusion 
+Conclusion:
+
 The main aim of the proposed research work is to develop an image assisted examination procedure to extract and assess malaria affected cells. If more accuracy can be achieved then we will be able to detect the malaria damaged cells in patients and take measures accordingly. Malaria parasite is big problem in today’s world. If we can develop the AI further , we will be able to help the doctor working with this problem.
 
